@@ -1,0 +1,166 @@
+{
+  "version": "P&P_VendorRisk_v2025-08-18",
+  "catalog": {
+    "logical_access_controls": [
+      { "id": "lac_least_privilege", "text": "Access is provisioned… principle of least privilege", "tags": ["red"] },
+      { "id": "lac_mfa_critical_or_pii", "text": "MFA is required for access to critical systems or consumer PII", "tags": [] },
+      { "id": "lac_no_shared_credentials", "text": "Shared credentials are strictly prohibited", "tags": [] },
+      { "id": "lac_mfa_privileged", "text": "MFA is required to secure all privileged/admin accounts", "tags": [] },
+      { "id": "lac_review_annually", "text": "Access rights and privileges are reviewed at least annually", "tags": ["red"] },
+      { "id": "lac_review_on_role_change", "text": "Access rights are reviewed when an employee changes roles", "tags": ["red"] },
+      { "id": "lac_password_complexity", "text": "Passwords are unique with complexity rules", "tags": ["red"] },
+      { "id": "lac_account_lockout", "text": "Automatic account lockout occurs", "tags": [] },
+      { "id": "lac_password_rotation", "text": "Password frequency changes are required at regular intervals", "tags": [] },
+      { "id": "lac_passwords_encrypted_in_transit", "text": "Passwords must be encrypted in transit", "tags": [] },
+      { "id": "lac_mfa_factors_two_plus", "text": "At least 2 parameters used for 2FA/MFA (Passwords, Smart card, Biometrics, Certificates, One-time password devices, ID badges, Rotating authenticator apps)", "tags": [] }
+    ],
+    "network_information_security": {
+      "pii_controls": [
+        { "id": "net_pii_need_to_know", "text": "Access to consumer PII is limited based on the need to know", "tags": [] },
+        { "id": "net_pii_encrypted_in_transit", "text": "Consumer PII in transit is protected by encryption", "tags": [] },
+        { "id": "net_pii_secure_disposal", "text": "Policies and procedures require secure disposal of consumer PII", "tags": [] }
+      ],
+      "controls": [
+        { "id": "net_firewall_network_or_host", "text": "Network firewall and/or host-based firewall for workstations", "tags": ["red"] },
+        { "id": "net_dmz", "text": "Network designed with a DMZ", "tags": [] },
+        { "id": "net_ids_or_ips", "text": "Network IDS or IPS deployed", "tags": ["red"] },
+        { "id": "net_anti_spam_malware_solution", "text": "Solution against spam and malware", "tags": [] },
+        { "id": "net_byod_segregated_or_prohibited", "text": "BYOD segregated from internal network or prohibited", "tags": [] },
+        { "id": "net_no_local_admin", "text": "Users do not have local administrative rights", "tags": [] },
+        { "id": "net_vuln_scans", "text": "Network vulnerability scans are performed", "tags": ["red"] },
+        { "id": "net_pentest", "text": "Penetration tests are performed", "tags": [] },
+        { "id": "net_antivirus", "text": "Antivirus software is deployed", "tags": ["red"] },
+        { "id": "net_antimalware", "text": "Anti-malware software is deployed", "tags": [] },
+        { "id": "net_realtime_scanning", "text": "Workstations/servers scanned for viruses in real-time", "tags": ["red"] },
+        { "id": "net_all_endpoints_up_to_date", "text": "All endpoints have up-to-date antivirus, antimalware, and other security software", "tags": ["red"] },
+        { "id": "net_encrypt_in_transit", "text": "Encryption in place for data/credentials in transit", "tags": ["red"] },
+        { "id": "net_encrypt_at_rest", "text": "Encryption enabled for data at rest", "tags": ["red"] },
+        { "id": "net_patch_critical", "text": "Critical vulnerabilities are patched", "tags": ["red"] },
+        { "id": "net_acceptable_use_policy", "text": "Established Acceptable Use Policy", "tags": [] },
+        { "id": "net_info_asset_classification", "text": "Information assets are risk-classified", "tags": ["red"] },
+        { "id": "net_records_retention", "text": "Records retention policy", "tags": [] },
+        { "id": "net_email_attachment_scanning", "text": "Email attachments scanned for viruses/malicious code", "tags": [] },
+        { "id": "net_secure_decommissioning", "text": "Process to remove data/destroy media before decommissioning equipment", "tags": ["red"] },
+        { "id": "net_block_usb_storage", "text": "USB Mass Storage Devices blocked", "tags": [] }
+      ]
+    },
+    "change_mgmt_sdlc": [
+      { "id": "chg_change_mgmt_process", "text": "Documented Change Management process", "tags": [] },
+      { "id": "chg_sdlc", "text": "Established IT Software Development Life Cycle (SDLC)", "tags": [] },
+      { "id": "chg_env_separation", "text": "Separation between dev/test/staging and production", "tags": [] },
+      { "id": "chg_vuln_comm_to_devs", "text": "SDLC includes communicating discovered vulnerabilities to developers", "tags": [] },
+      { "id": "chg_integration_acceptance_testing", "text": "SDLC includes integration and acceptance testing", "tags": [] },
+      { "id": "chg_test_before_prod", "text": "Changes/updates to production systems must be tested before deployment", "tags": [] }
+    ],
+    "remote_workforce": [
+      { "id": "rw_protect_company_customer_info", "text": "Employees must protect proprietary company and customer info", "tags": [] },
+      { "id": "rw_mfa_all_remote", "text": "MFA required to secure all methods of remote access", "tags": [] },
+      { "id": "rw_endpoints_up_to_date", "text": "All endpoints have up-to-date antivirus/antimalware", "tags": [] },
+      { "id": "rw_segregated_entry", "text": "Remote connections are fully segregated entry points (VPN/RDP/etc.)", "tags": [] },
+      { "id": "rw_encrypt_both_ends", "text": "Both remote and target workstations encrypt data in transit and at rest", "tags": [] }
+    ],
+    "incident_response_elements": [
+      "Identification", "Investigation", "Containment", "Recovery", "Remediation", "Lessons Learned"
+    ],
+    "business_continuity": [
+      { "id": "bcp_plan", "text": "Documented Business Continuity Plan", "tags": [] }
+    ]
+  },
+
+  "conditions": {
+    "logical_access_controls": {
+      "enforce_mfa_critical_or_pii_if_company_handles_pii": true,
+      "pii_positive_statements": [
+        "The Company collects, stores, uses, transfers, accesses, protects, and/or secures only consumer PII",
+        "The Company collects, stores, uses, transfers, accesses, protects, and/or secures both consumer PII"
+      ],
+      "passwords_encrypted_in_transit_only_if_negative_statement_present": [
+        "Passwords are not encrypted in transit",
+        "Encryption is not in place for data and credentials in transit"
+      ]
+    },
+    "network_information_security": {
+      "enforce_pii_controls_if_company_handles_pii": true,
+      "do_not_enforce_need_to_know_if_least_privilege_statement_present": true
+    },
+    "remote_workforce": {
+      "enforce_only_if_remote_work_allowed": "The Company allows employees and/or contractors to work remotely"
+    },
+    "change_mgmt_sdlc": {
+      "enforce_sdlc_criteria_only_if_software_provider": true
+    },
+    "cross_satisfaction": [
+      {
+        "if_any_statement_present": ["All endpoints have up-to-date antivirus, antimalware"],
+        "then_mark_controls_met": ["net_all_endpoints_up_to_date", "rw_endpoints_up_to_date"]
+      }
+    ]
+  },
+
+  "ratings": {
+    "very_favorable": {
+      "info_tech_overview": { "required": ["Hardware, software… asset inventory"] },
+      "logical_access_controls": { "required_all": true },
+      "network_information_security": {
+        "pii_controls_required_if_company_handles_pii": true,
+        "controls_required_all": true
+      },
+      "change_mgmt_sdlc": { "required_all": true },
+      "remote_workforce": { "required_all": true },
+      "incident_response": { "min_elements": 4 },
+      "business_continuity": { "required": true }
+    },
+    "favorable": {
+      "info_tech_overview": { "required": ["Hardware, software… asset inventory"] },
+      "logical_access_controls": { "min_count": 8, "must_include_tag": "red" }, 
+      "network_information_security": {
+        "pii_controls_required_if_company_handles_pii": true,
+        "min_count": 15,
+        "must_include_tag": "red"
+      },
+      "change_mgmt_sdlc": {
+        "require_change_mgmt_process": true,
+        "min_count_from": ["chg_sdlc", "chg_env_separation", "chg_vuln_comm_to_devs", "chg_integration_acceptance_testing", "chg_test_before_prod"],
+        "min_count": 4
+      },
+      "remote_workforce": { "min_count": 4 },
+      "incident_response": { "min_elements": 3 },
+      "business_continuity": { "required": true }
+    },
+    "neutral": {
+      "info_tech_overview": { "required": ["Hardware, software… asset inventory"] },
+      "logical_access_controls": { "min_count": 6, "must_include_tag": "red" }, 
+      "network_information_security": {
+        "pii_controls_required_if_company_handles_pii": true,
+        "min_count": 11,
+        "must_include_tag": "red"
+      },
+      "change_mgmt_sdlc": {
+        "require_change_mgmt_process": true,
+        "min_count_from": ["chg_sdlc", "chg_env_separation", "chg_vuln_comm_to_devs", "chg_integration_acceptance_testing", "chg_test_before_prod"],
+        "min_count": 3
+      },
+      "remote_workforce": { "min_count": 3 },
+      "incident_response": { "min_elements": 3 },
+      "business_continuity": { "required": true }
+    },
+    "unfavorable": {
+      "info_tech_overview": { "required": ["Hardware, software… asset inventory"] },
+      "logical_access_controls": { "min_count": 5 },
+      "network_information_security": { "pii_controls_required_if_company_handles_pii": true, "min_count": 10 },
+      "change_mgmt_sdlc": {
+        "require_change_mgmt_process": true,
+        "min_count_from": ["chg_sdlc", "chg_env_separation", "chg_vuln_comm_to_devs", "chg_integration_acceptance_testing", "chg_test_before_prod"],
+        "min_count": 2
+      },
+      "remote_workforce": { "min_count": 2 },
+      "incident_response": { "min_elements": 3 },
+      "business_continuity": { "required": true }
+    },
+    "very_unfavorable": {
+      "rule": "If vendor has fewer than the safeguards for 'unfavorable', rate Very Unfavorable"
+    },
+    "n_a": { "rule": "Not applicable to the vendor’s services/products" },
+    "no_information_provided": { "rule": "Vendor did not provide information" }
+  }
+}

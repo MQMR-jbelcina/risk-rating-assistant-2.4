@@ -1,0 +1,43 @@
+The Company allows employees and/or contractors to work remotely.
+All endpoints have up-to-date antivirus, antimalware.
+Access is provisioned… principle of least privilege.
+MFA is required to secure all privileged/admin accounts.
+Access rights and privileges are reviewed at least annually.
+Access rights are reviewed when an employee changes roles.
+Passwords are unique with complexity rules.
+Automatic account lockout occurs.
+Password frequency changes are required at regular intervals.
+Passwords must be encrypted in transit.
+At least 2 parameters used for 2FA/MFA (Passwords, Smart card, Biometrics, Certificates, One-time password devices, ID badges, Rotating authenticator apps).
+Shared credentials are strictly prohibited.
+Network firewall and/or host-based firewall for workstations.
+Network IDS or IPS deployed.
+Network vulnerability scans are performed.
+Penetration tests are performed.
+Antivirus software is deployed.
+Anti-malware software is deployed.
+Workstations/servers scanned for viruses in real-time.
+Encryption in place for data/credentials in transit.
+Encryption enabled for data at rest.
+Critical vulnerabilities are patched.
+Information assets are risk-classified.
+Process to remove data/destroy media before decommissioning equipment.
+All endpoints have up-to-date antivirus, antimalware, and other security software.
+MFA required to secure all methods of remote access.
+Remote connections are fully segregated entry points (VPN/RDP/etc.).
+Both remote and target workstations encrypt data in transit and at rest.
+Employees must protect proprietary company and customer info.
+Documented Change Management process.
+Established IT Software Development Life Cycle (SDLC).
+Separation between dev/test/staging and production.
+SDLC includes communicating discovered vulnerabilities to developers.
+SDLC includes integration and acceptance testing.
+Changes/updates to production systems must be tested before deployment.
+Documented Business Continuity Plan.
+Identification, Investigation, Containment, Recovery, Remediation, Lessons Learned.
+Hardware, software… asset inventory.
+The Company collects, stores, uses, transfers, accesses, protects, and/or secures both consumer PII.
+MFA is required for access to critical systems or consumer PII.
+Consumer PII in transit is protected by encryption.
+Policies and procedures require secure disposal of consumer PII.
+Access to consumer PII is limited based on the need to know.
