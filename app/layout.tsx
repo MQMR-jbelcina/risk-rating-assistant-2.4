@@ -1,11 +1,24 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
+import { Manrope, Playfair_Display } from "next/font/google";
 import "./globals.css";
 
+const manrope = Manrope({
+  subsets: ["latin"],
+  variable: "--font-sans",
+  display: "swap"
+});
+
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  variable: "--font-serif",
+  display: "swap"
+});
+
 export const metadata: Metadata = {
-  title: "Vendor Risk Rating Assistant",
+  title: "JiwonAI | AI & Automation Consultant",
   description:
-    "Evaluate vendor analyst notes against policy-driven safeguards to determine risk ratings."
+    "Designing AI-powered automations and developer-centric workflows that help small teams ship faster."
 };
 
 export default function RootLayout({
@@ -14,20 +27,9 @@ export default function RootLayout({
   children: ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className="bg-slate-100 text-slate-900">
-        <div className="mx-auto max-w-5xl px-4 py-10">
-          <header className="mb-8 space-y-2">
-            <h1 className="text-3xl font-bold text-slate-900">
-              Vendor Risk Rating Assistant
-            </h1>
-            <p className="text-slate-600">
-              Paste analyst notes to see how the vendor maps to the policy catalog and
-              determine the resulting risk rating.
-            </p>
-          </header>
-          <main>{children}</main>
-        </div>
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${manrope.variable} ${playfair.variable} antialiased`}>
+        {children}
       </body>
     </html>
   );
